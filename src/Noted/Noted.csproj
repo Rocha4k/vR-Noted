@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <AssemblyName>NOTED</AssemblyName>
+    <RootNamespace>Noted</RootNamespace>
+    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+
+    <!-- icone do executavel (temporario: logotipo vR) -->
+    <ApplicationIcon>Assets\noted.ico</ApplicationIcon>
+
+    <!-- perfil leve: GC workstation, jit rapido no arranque -->
+    <!-- nota: InvariantGlobalization nao pode ser usado: WPF precisa da cultura do teclado -->
+    <ServerGarbageCollection>false</ServerGarbageCollection>
+    <ConcurrentGarbageCollection>false</ConcurrentGarbageCollection>
+    <TieredPGO>true</TieredPGO>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- o mesmo .ico embebido, para a bandeja o poder carregar no tamanho certo do sistema -->
+    <EmbeddedResource Include="Assets\noted.ico" LogicalName="NOTED.AppIcon" />
+  </ItemGroup>
+
+</Project>
